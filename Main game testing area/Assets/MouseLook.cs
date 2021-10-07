@@ -15,10 +15,13 @@ public class MouseLook : MonoBehaviour
     Quaternion headStartOrientatiob;
 
     Transform head;
+    Transform area;
 
     private void Start()
     {
         head = GetComponentInChildren<Camera>().transform;
+        area = GameObject.Find("Point").transform;
+
         bodyStartOrientation = transform.localRotation;
         headStartOrientatiob = head.transform.localRotation;
 
@@ -40,8 +43,22 @@ public class MouseLook : MonoBehaviour
         var headRotation = Quaternion.AngleAxis(pitch, Vector3.left);
 
         transform.localRotation = bodyRotation * bodyStartOrientation;
-        head.localRotation = headRotation * headStartOrientatiob;
-        transform.position = transform.position + new Vector3(0,0,1*Time.deltaTime);
+        area.localRotation = headRotation * headStartOrientatiob;
+        
+
+        if (Input.GetMouseButton(1) && head.transform.localPosition.z >= -10)
+        {
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -5 * Time.deltaTime);
+
+        }
+        if(Input.GetMouseButton(0) && head.transform.localPosition.z <= 0)
+        {
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 5 * Time.deltaTime);
+
+        }
+
+
+
     }
 
 
