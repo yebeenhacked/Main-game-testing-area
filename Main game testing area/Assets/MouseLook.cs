@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MouseLook : MonoBehaviour
 {
+    public Vector3 jump;
+    public float jumpForce = 200f;
+
+    public bool isGrounded;
+    Rigidbody rd;
+
+
     float turnSpeed = 600f;
     float headUpperAngleLimit = 85f;
     float headLowerAngleLimit = -80f;
@@ -19,6 +27,9 @@ public class MouseLook : MonoBehaviour
 
     private void Start()
     {
+        rd = GetComponent<Rigidbody>();
+        jump = new Vector3(0, 2.0f, 0);
+
         head = GetComponentInChildren<Camera>().transform;
         area = GameObject.Find("Point").transform;
 
@@ -29,9 +40,14 @@ public class MouseLook : MonoBehaviour
         Cursor.visible = false;
     }
 
+    void OnCollisionStay()
+    {
+        isGrounded = true;
+    }
+
     private void Update()
     {
-      
+        
 
 
 
@@ -79,7 +95,11 @@ public class MouseLook : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * 4, transform);
         }
-       
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rd.AddForce(jump * jumpForce, ForceMode.Impulse);
+        }
+
 
 
 
