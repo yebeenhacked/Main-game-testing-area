@@ -67,18 +67,6 @@ public class MouseLook : MonoBehaviour
         area.localRotation = headRotation * headStartOrientatiob;
 
 
-        if (Input.GetMouseButton(1) && head.transform.localPosition.z >= -10)
-        {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -5 * Time.deltaTime);
-
-        }
-        if (Input.GetMouseButton(0) && head.transform.localPosition.z <= 0)
-        {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 5 * Time.deltaTime);
-
-        }
-
-
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * 6, transform);
@@ -102,11 +90,11 @@ public class MouseLook : MonoBehaviour
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -50 * Time.deltaTime);
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -100 * Time.deltaTime);
         }
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forwards
         {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 50 * Time.deltaTime);
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 100 * Time.deltaTime);
         }
 
 
