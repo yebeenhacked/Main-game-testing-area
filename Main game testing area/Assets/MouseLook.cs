@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    float turnSpeed = 270f;
+    float turnSpeed = 600f;
     float headUpperAngleLimit = 85f;
     float headLowerAngleLimit = -80f;
 
@@ -31,6 +31,7 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(transform.rotation);
         var horizontal = Input.GetAxis("Mouse X") * Time.deltaTime * turnSpeed;
         var vertical = Input.GetAxis("Mouse Y") * Time.deltaTime * turnSpeed;
 
@@ -55,6 +56,24 @@ public class MouseLook : MonoBehaviour
         {
             head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 5 * Time.deltaTime);
 
+        }
+
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * 6, transform);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.back * Time.deltaTime * 4, transform);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * 4, transform);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * 4, transform);
         }
 
 
