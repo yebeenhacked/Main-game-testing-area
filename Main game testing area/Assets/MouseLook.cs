@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     public Vector3 jump;
-    public float jumpForce = 200f;
+    public float jumpForce = 600f;
 
     public bool isGrounded;
     Rigidbody rd;
@@ -98,6 +98,15 @@ public class MouseLook : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rd.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        {
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -50 * Time.deltaTime);
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forwards
+        {
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 50 * Time.deltaTime);
         }
 
 
