@@ -20,7 +20,7 @@ public class sword : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            InvokeRepeating("Scale",0f , .01f);
+            InvokeRepeating("Scale",0f , .003f);
             
             
         }
