@@ -41,6 +41,7 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = bodyRotation * bodyStartOrientation;
         head.localRotation = headRotation * headStartOrientatiob;
+        transform.position = transform.position + new Vector3(0,0,1*Time.deltaTime);
     }
 
 
