@@ -31,6 +31,10 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
+      
+
+
+
         Debug.Log(transform.rotation);
         var horizontal = Input.GetAxis("Mouse X") * Time.deltaTime * turnSpeed;
         var vertical = Input.GetAxis("Mouse Y") * Time.deltaTime * turnSpeed;
@@ -45,14 +49,14 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = bodyRotation * bodyStartOrientation;
         area.localRotation = headRotation * headStartOrientatiob;
-        
+
 
         if (Input.GetMouseButton(1) && head.transform.localPosition.z >= -10)
         {
             head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -5 * Time.deltaTime);
 
         }
-        if(Input.GetMouseButton(0) && head.transform.localPosition.z <= 0)
+        if (Input.GetMouseButton(0) && head.transform.localPosition.z <= 0)
         {
             head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 5 * Time.deltaTime);
 
@@ -75,6 +79,7 @@ public class MouseLook : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * 4, transform);
         }
+       
 
 
 
