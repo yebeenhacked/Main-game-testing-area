@@ -24,6 +24,8 @@ public class MouseLook : MonoBehaviour
 
     Transform head;
     Transform area;
+    Transform weapon;
+    
 
     private void Start()
     {
@@ -32,6 +34,7 @@ public class MouseLook : MonoBehaviour
 
         head = GetComponentInChildren<Camera>().transform;
         area = GameObject.Find("Point").transform;
+        weapon = GameObject.Find("weapon").transform;
 
         bodyStartOrientation = transform.localRotation;
         headStartOrientatiob = head.transform.localRotation;
@@ -69,13 +72,16 @@ public class MouseLook : MonoBehaviour
 
         if (Input.GetMouseButton(1) && head.transform.localPosition.z >= -10)
         {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -5 * Time.deltaTime);
-
+            if (weapon.transform.localPosition.z >= 0.83) { 
+            weapon.transform.localPosition = weapon.transform.localPosition + new Vector3(0, 0, -5 * Time.deltaTime);
+        }
         }
         if (Input.GetMouseButton(0) && head.transform.localPosition.z <= 0)
         {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 5 * Time.deltaTime);
-
+            
+            
+                weapon.transform.localPosition = weapon.transform.localPosition + new Vector3(0, 0, 5 * Time.deltaTime);
+            
         }
 
 
