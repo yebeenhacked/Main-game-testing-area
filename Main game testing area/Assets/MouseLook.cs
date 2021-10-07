@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    float turnSpeed = 120f;
+    float turnSpeed = 270f;
     float headUpperAngleLimit = 85f;
     float headLowerAngleLimit = -80f;
 
@@ -26,7 +26,7 @@ public class MouseLook : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         var horizontal = Input.GetAxis("Mouse X") * Time.deltaTime * turnSpeed;
         var vertical = Input.GetAxis("Mouse Y") * Time.deltaTime * turnSpeed;
