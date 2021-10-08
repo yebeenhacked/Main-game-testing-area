@@ -36,8 +36,9 @@ public class MouseLook : MonoBehaviour
         bodyStartOrientation = transform.localRotation;
         headStartOrientatiob = head.transform.localRotation;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;     // set to default default
+        Cursor.lockState = CursorLockMode.Confined; // keep confined in the game window
+        Cursor.lockState = CursorLockMode.Locked;   // keep confined to center of screen
     }
 
     void OnCollisionStay()
@@ -51,7 +52,7 @@ public class MouseLook : MonoBehaviour
 
 
 
-        Debug.Log(transform.rotation);
+
         var horizontal = Input.GetAxis("Mouse X") * Time.deltaTime * turnSpeed;
         var vertical = Input.GetAxis("Mouse Y") * Time.deltaTime * turnSpeed;
 

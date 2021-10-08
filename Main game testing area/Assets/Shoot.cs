@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _camera = Camera.main;
     }
 
     // Update is called once per frame
@@ -30,10 +30,13 @@ public class Shoot : MonoBehaviour
 
     private void shootray()
     {
-        _ray = _camera.ScreenPointToRay(Input.mousePosition);
+        _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        
         if (Physics.Raycast(_ray, out _rayhit))
         {
+            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
             Debug.Log(_rayhit.transform.name);
+            Debug.DrawRay(transform.position, forward, Color.green);
 
         }
     }

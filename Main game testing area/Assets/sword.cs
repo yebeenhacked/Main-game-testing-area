@@ -11,7 +11,7 @@ public class sword : MonoBehaviour
     {
 
 
-        
+
 
 
     }
@@ -20,9 +20,9 @@ public class sword : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            InvokeRepeating("Scale",0f , .003f);
-            
-            
+            InvokeRepeating("Scale", 0f, .003f);
+
+
         }
         if (mSize >= 99)
         {
@@ -35,13 +35,13 @@ public class sword : MonoBehaviour
     void Scale()
     {
 
-        if(mSize >= 100)
+        if (mSize >= 100)
         {
             CancelInvoke("Scale");
         }
 
 
-        GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0,mSize++);
+        GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, mSize++);
     }
 
 
