@@ -7,15 +7,11 @@ public class MouseLook : MonoBehaviour
 {
     public Vector3 jump;
     public float jumpForce = 600f;
-
     public bool isGrounded;
     Rigidbody rd;
-
-
     float turnSpeed = 600f;
     float headUpperAngleLimit = 85f;
     float headLowerAngleLimit = -80f;
-
     float yaw = 0f;
     float pitch = 0f;
 
@@ -25,6 +21,8 @@ public class MouseLook : MonoBehaviour
     Transform head;
     Transform area;
 
+
+    public int score = 0;
     private void Start()
     {
         
