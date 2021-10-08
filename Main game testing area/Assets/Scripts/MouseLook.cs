@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+
 public class MouseLook : MonoBehaviour
 {
     public Vector3 jump;
@@ -27,6 +27,7 @@ public class MouseLook : MonoBehaviour
 
     private void Start()
     {
+        
         rd = GetComponent<Rigidbody>();
         jump = new Vector3(0, 2.0f, 0);
 
