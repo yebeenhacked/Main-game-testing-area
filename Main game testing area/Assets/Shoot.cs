@@ -34,9 +34,11 @@ public class Shoot : MonoBehaviour
         
         if (Physics.Raycast(_ray, out _rayhit))
         {
-            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-            Debug.Log(_rayhit.transform.name);
-            Debug.DrawRay(transform.position, forward, Color.green);
+            if(_rayhit.collider.gameObject.name != "Plane" && _rayhit.collider.gameObject.name != "Player")
+            {
+                Destroy(_rayhit.collider.gameObject);
+            }
+            
 
         }
     }
