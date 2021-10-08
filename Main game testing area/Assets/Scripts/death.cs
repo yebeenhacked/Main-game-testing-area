@@ -5,15 +5,25 @@ using UnityEngine;
 public class death : MonoBehaviour
 {
     private float dead = 0f;
+    public int points = 0;
     public MouseLook mouse;
-
+    private Renderer render;
     // Update is called once per frame
     private void Start()
     {
         mouse = GameObject.Find("Player").GetComponent<MouseLook>();
+        render = GetComponent<Renderer>();
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (render.isVisible)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
         dead += 1f * Time.deltaTime;
         
         if (dead >= 7)
@@ -23,7 +33,7 @@ public class death : MonoBehaviour
     }
     private void OnDestroy()
     {
-        mouse.score += 10;
+        mouse.score += points;
         Debug.Log(mouse.score);
     }
 

@@ -21,7 +21,8 @@ public class MouseLook : MonoBehaviour
     Transform head;
     Transform area;
 
-
+    public bool shout = false;
+    private float shout_cooldown = 10;
     public int score = 0;
     private void Start()
     {
@@ -47,8 +48,15 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
-        
-
+        if (score >= 1000)
+        {
+            shout_cooldown -= 1 * Time.deltaTime;
+            if (shout_cooldown <= 0)
+            {
+                shout = true;
+            }
+        }
+    
 
 
 
@@ -69,19 +77,19 @@ public class MouseLook : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * 6, transform);
+            transform.Translate(Vector3.forward * Time.deltaTime * 15, transform);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * 4, transform);
+            transform.Translate(Vector3.back * Time.deltaTime * 15, transform);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * 4, transform);
+            transform.Translate(Vector3.left * Time.deltaTime * 15, transform);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * 4, transform);
+            transform.Translate(Vector3.right * Time.deltaTime * 15, transform);
         }
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {

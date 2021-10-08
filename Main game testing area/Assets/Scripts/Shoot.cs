@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
         
         if (Physics.Raycast(_ray, out _rayhit))
         {
-            if(_rayhit.collider.gameObject.name != "Plane" && _rayhit.collider.gameObject.name != "Player")
+            if(_rayhit.collider.gameObject.tag != "plane" && _rayhit.collider.gameObject.name != "Player")
             {
                 Destroy(_rayhit.collider.gameObject);
             }
