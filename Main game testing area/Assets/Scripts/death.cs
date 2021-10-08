@@ -26,4 +26,15 @@ public class death : MonoBehaviour
         mouse.score += 10;
         Debug.Log(mouse.score);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    
+        
+    
 }
