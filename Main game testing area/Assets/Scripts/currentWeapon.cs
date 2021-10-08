@@ -20,6 +20,30 @@ public class currentWeapon : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            slectedWeapon = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            slectedWeapon = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            slectedWeapon = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            slectedWeapon = 4;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            slectedWeapon = 5;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            slectedWeapon = 6;
+        }
         switchWeapon();
 
     }
