@@ -5,7 +5,7 @@ using UnityEngine;
 public class sword_enemy : MonoBehaviour
 {
     public GameObject myPrefab;
-
+    private bool isQuitting = false;
     private float mSize = 0f;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,10 @@ public class sword_enemy : MonoBehaviour
 
 
 
+    }
+    void OnApplicationQuit()
+    {
+        isQuitting = true;
     }
 
     /*private void Update()
@@ -49,20 +53,23 @@ public class sword_enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        Vector3 a = transform.position;
-        var randomPosition = new Vector3(Random.Range(a.x-.5f, a.x +.5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
-        Instantiate(myPrefab, randomPosition , Quaternion.identity);
 
-        randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
-        Instantiate(myPrefab, randomPosition, Quaternion.identity);
+        if (!isQuitting) {
+            Vector3 a = transform.position;
+            var randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
+            Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-        randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
-        Instantiate(myPrefab, randomPosition, Quaternion.identity);
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
+            Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-        randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
-        Instantiate(myPrefab, randomPosition, Quaternion.identity);
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
+            Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-        randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
-        Instantiate(myPrefab, randomPosition, Quaternion.identity);
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
+            Instantiate(myPrefab, randomPosition, Quaternion.identity);
+
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f), Random.Range(a.y - .5f, a.y + .5f), Random.Range(a.z - .5f, a.z + .5f));
+            Instantiate(myPrefab, randomPosition, Quaternion.identity);
+        }
     }
 }

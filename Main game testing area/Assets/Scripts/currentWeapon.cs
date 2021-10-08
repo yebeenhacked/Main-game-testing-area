@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class currentWeapon : MonoBehaviour
 {
-    public int slectedWeapon;
+    public int slectedWeapon = 1;
     
     void Update()
     {

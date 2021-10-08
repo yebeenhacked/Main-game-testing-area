@@ -88,13 +88,13 @@ public class MouseLook : MonoBehaviour
             rd.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f && head.transform.localPosition.z <= 10) // backwards
         {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -100 * Time.deltaTime);
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, -300 * Time.deltaTime);
         }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forwards
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && head.transform.localPosition.z > 0) // forwards
         {
-            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 100 * Time.deltaTime);
+            head.transform.localPosition = head.transform.localPosition + new Vector3(0, 0, 300 * Time.deltaTime);
         }
 
 

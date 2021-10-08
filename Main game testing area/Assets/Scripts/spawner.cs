@@ -5,7 +5,7 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public GameObject myPrefab;
-    private float time = 0f;
+    private float time = 7f;
     // Update is called once per frame
     void Update()
     {
