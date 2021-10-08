@@ -15,19 +15,19 @@ public class spawner : MonoBehaviour
         {
             time = 0;
             Vector3 a = transform.position;
-            var randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(a.y - 10f, a.y + 10f), Random.Range(a.z - 10f, a.z + 10f));
+            var randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(10, 10), Random.Range(a.z - 10f, a.z + 10f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(a.y - 10f, a.y + 10f), Random.Range(a.z - 10f, a.z + 10f));
+            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(10, 10), Random.Range(a.z - 10f, a.z + 10f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(a.y - 10f, a.y + 10f), Random.Range(a.z - 10f, a.z + 10f));
+            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(10, 10), Random.Range(a.z - 10f, a.z + 10f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(a.y - 10f, a.y + 10f), Random.Range(a.z - 10f, a.z + 10f));
+            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(10, 10), Random.Range(a.z - 10f, a.z + 10f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(a.y - 10f, a.y + 10f), Random.Range(a.z - 10f, a.z + 10f));
+            randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(10, 10), Random.Range(a.z - 10f, a.z + 10f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
         }
     }
