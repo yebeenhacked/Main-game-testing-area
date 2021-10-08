@@ -18,7 +18,7 @@ public class sword_enemy : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E) && a.shout)
+        if (Input.GetKeyDown(KeyCode.E) )
         {
             if (render.isVisible)
             {
