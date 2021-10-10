@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class sword_enemy : MonoBehaviour
 {
     public GameObject myPrefab;
@@ -9,63 +9,75 @@ public class sword_enemy : MonoBehaviour
     private float mSize = 0f;
     private Renderer render;
     private MouseLook a;
+    public float health;
+    public float maxHealth = 100;
+    public Slider slider;
+    public GameObject healthBar;
+    Camera camera;
+    private GameObject player;
+    public Transform target;
+    public float speed = 4f;
+    Rigidbody rig;
+
+
+
+
     // Start is called before the first frame update
     private void Start()
     {
+        health = maxHealth;
+        camera = Camera.main;
+        healthBar.SetActive(false);
+        slider.value = calculateHealth();
         render = GetComponent<Renderer>();
         a = GameObject.Find("Player").GetComponent<MouseLook>();
-    }
-    void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.E) )
-        {
-            if (render.isVisible)
-            {
-                
-                Destroy(this.gameObject);
-                
-            }
-        }
-
-
+        target = GameObject.Find("Player").transform;
+        rig = GetComponent<Rigidbody>();
 
 
     }
+ 
     void OnApplicationQuit()
     {
         isQuitting = true;
+        
     }
 
-    /*private void Update()
+
+    private void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            InvokeRepeating("Scale", 0f, .003f);
-
-
-        }
-        if (mSize >= 99)
-        {
-            CancelInvoke("Scale");
-            mSize = 0;
-            GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, mSize);
-        }
+        //make enemy moce to player
+        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
+        rig.MovePosition(pos);
+        transform.LookAt(target);
     }
-
-    void Scale()
+    private void Update()
     {
+        healthBar.transform.LookAt(transform.position + camera.transform.rotation * Vector3.back, camera.transform.rotation * Vector3.up);
+        slider.value = calculateHealth();
 
-        if (mSize >= .50)
+        if (health < maxHealth)
         {
-            CancelInvoke("Scale");
+            healthBar.SetActive(true);
         }
 
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
 
-        GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, mSize++);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (render.isVisible)
+            {
+
+                Destroy(this.gameObject);
+
+            }
+        }
+
+        
     }
-
-    */
 
     private void OnDestroy()
     {
@@ -73,20 +85,25 @@ public class sword_enemy : MonoBehaviour
         if (!isQuitting) {
             
             Vector3 a = transform.position;
-            var randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.1f, Random.Range(a.z - .5f, a.z + .5f));
+            var randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.8f, Random.Range(a.z - .5f, a.z + .5f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.1f, Random.Range(a.z - .5f, a.z + .5f));
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.8f, Random.Range(a.z - .5f, a.z + .5f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.1f, Random.Range(a.z - .5f, a.z + .5f));
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.8f, Random.Range(a.z - .5f, a.z + .5f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.1f, Random.Range(a.z - .5f, a.z + .5f));
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.8f, Random.Range(a.z - .5f, a.z + .5f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
 
-            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.1f, Random.Range(a.z - .5f, a.z + .5f));
+            randomPosition = new Vector3(Random.Range(a.x - .5f, a.x + .5f),.8f, Random.Range(a.z - .5f, a.z + .5f));
             Instantiate(myPrefab, randomPosition, Quaternion.identity);
         }
+    }
+
+    private float calculateHealth()
+    {
+        return health / maxHealth;
     }
 }

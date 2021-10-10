@@ -9,7 +9,7 @@ public class MouseLook : MonoBehaviour
     public float jumpForce = 6 ;
     public bool isGrounded;
     Rigidbody rd;
-    float turnSpeed = 600f;
+    float turnSpeed = 1000f;
     float headUpperAngleLimit = 85f;
     float headLowerAngleLimit = -80f;
     float yaw = 0f;

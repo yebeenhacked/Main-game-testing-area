@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spawner : MonoBehaviour
 {
+    gen locate;
     public GameObject en1;
     public GameObject en2;
     public GameObject en3;
@@ -15,11 +16,11 @@ public class spawner : MonoBehaviour
     void Update()
     {
         time += 1f * Time.deltaTime;
+        locate = GetComponent<gen>();
 
         if (time >= 7)
         {
             time = 0;
-            Vector3 locate = transform.position;
             spawn(en1,locate);
             spawn(en2, locate);
             spawn(en3, locate);
@@ -29,9 +30,9 @@ public class spawner : MonoBehaviour
         }
     }
 
-    void spawn(GameObject myPrefab, Vector3 a)
+    void spawn(GameObject myPrefab, gen a)
     {
-        var randomPosition = new Vector3(Random.Range(a.x - 10f, a.x + 10f), Random.Range(10, 10), Random.Range(a.z - 10f, a.z + 10f));
+        var randomPosition = new Vector3(Random.Range((a.xsize/2) - 20, (a.xsize/2)+20), Random.Range(10, 10), Random.Range((a.zsize / 2) - 20, (a.zsize / 2) + 20));
         Instantiate(myPrefab, randomPosition, Quaternion.identity);
     }
 }
