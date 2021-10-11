@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7391924384430805666}
   - component: {fileID: 7391924384430805664}
-  - component: {fileID: 7391924384430805665}
   - component: {fileID: 8616781389977113104}
   - component: {fileID: 1554982749641016354}
+  - component: {fileID: 5507250323173387685}
   m_Layer: 0
   m_Name: halberd
   m_TagString: Untagged
@@ -86,20 +86,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 23.616703, y: 1.0381067, z: 39.08084}
   m_DirtyAABB: 0
---- !u!114 &7391924384430805665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7391924384430805667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbeb76601740ff4aa6b856bdc1f79fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 15
-  mouse: {fileID: 0}
 --- !u!54 &8616781389977113104
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +115,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 47.233414, y: 2.0762134, z: 42.63779}
   m_Center: {x: 13.629142, y: -0.0000013659399, z: 9.905431}
+--- !u!114 &5507250323173387685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391924384430805667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbeb76601740ff4aa6b856bdc1f79fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  mouse: {fileID: 0}
 --- !u!1 &7391924384557644077
 GameObject:
   m_ObjectHideFlags: 0

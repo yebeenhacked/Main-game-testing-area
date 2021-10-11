@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class score : MonoBehaviour
+public class Wave : MonoBehaviour
 {
-    public MouseLook a;
     public spawner spawn;
     public Text text;
     private void Update()
     {
-        a = GameObject.Find("Player").GetComponent<MouseLook>();
-        text.text = a.score.ToString();
+        spawn = GameObject.Find("terrain").GetComponent<spawner>();
+        text.text = "Current Wave: "+ spawn.currentWave.ToString();
 
     }
 }

@@ -8,8 +8,8 @@ public class gen : MonoBehaviour
 {
     private const int Z = 1;
     Mesh mesh;
-    public int xsize = 20;
-    public int zsize = 20;
+    public int xsize;
+    public int zsize;
 
     Vector3[] verticies;
     int[] triangles;
@@ -34,7 +34,7 @@ public class gen : MonoBehaviour
 
         for (int i = 0, z = 0; z <= zsize; z++)
         {
-            for (int x = 0; x <= zsize; x++)
+            for (int x = 0; x <= xsize; x++)
             {
                 float y = Mathf.PerlinNoise(x*.1f, z*.1f);
                 verticies[i] = new Vector3(x, y, z);
@@ -79,15 +79,5 @@ public class gen : MonoBehaviour
         meshCollider.sharedMesh = mesh;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (verticies == null)
-        {
-            return;
-        }
-        for(int i = 0; i< verticies.Length; i++)
-        {
-            Gizmos.DrawSphere(verticies[i], .1f);
-        }
-    }
+    
 }

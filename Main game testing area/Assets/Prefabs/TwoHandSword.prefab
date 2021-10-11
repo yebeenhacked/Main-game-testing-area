@@ -41,9 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8157525414592181833}
   - component: {fileID: 8157525414592181839}
-  - component: {fileID: 8157525414592181832}
   - component: {fileID: 3703524152117732716}
   - component: {fileID: 1993540252773151624}
+  - component: {fileID: 6635240735353552448}
   m_Layer: 0
   m_Name: daul sword
   m_TagString: Untagged
@@ -117,20 +117,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
---- !u!114 &8157525414592181832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157525414592181834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbeb76601740ff4aa6b856bdc1f79fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 20
-  mouse: {fileID: 0}
 --- !u!54 &3703524152117732716
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,8 +141,22 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8157525414592181834}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.3080113, y: 15.828792, z: 14.793911}
   m_Center: {x: -0.21831593, y: -4.284193, z: 1.4765799}
+--- !u!114 &6635240735353552448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157525414592181834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbeb76601740ff4aa6b856bdc1f79fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  mouse: {fileID: 0}

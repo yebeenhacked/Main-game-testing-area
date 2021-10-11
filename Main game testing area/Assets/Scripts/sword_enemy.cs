@@ -63,7 +63,7 @@ public class sword_enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         if (Input.GetKeyDown(KeyCode.E))

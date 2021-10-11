@@ -20,21 +20,23 @@ public class death : MonoBehaviour
         {
             if (render.isVisible)
             {
-                Destroy(this.gameObject);
+                Destroy(transform.parent.gameObject);
             }
         }
 
         dead += 1f * Time.deltaTime;
-        
+        Debug.Log(dead);
         if (dead >= 7)
         {
-            Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
         }
+
+        
     }
     private void OnDestroy()
     {
         mouse.score += points;
-        Debug.Log(mouse.score);
+        
     }
 
     private void OnCollisionEnter(Collision other)

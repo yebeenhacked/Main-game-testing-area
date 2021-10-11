@@ -11,28 +11,37 @@ public class spawner : MonoBehaviour
     public GameObject en4;
     public GameObject en5;
     public GameObject en6;
-    private float time = 7f;
+    private float waves = 2;
+    public int currentWave = -5;
+    private int dif = 1;
     // Update is called once per frame
     void Update()
     {
-        time += 1f * Time.deltaTime;
+        Debug.Log(currentWave);
         locate = GetComponent<gen>();
 
-        if (time >= 7)
+        if (transform.childCount <= 0 && currentWave < waves )
         {
-            time = 0;
-            spawn(en1,locate);
-            spawn(en2, locate);
-            spawn(en3, locate);
-            spawn(en4, locate);
-            spawn(en5, locate);
-            spawn(en6, locate);
+            
+            
+            for (int i = 1; i <= dif; i++)
+            {
+                spawn(en1, locate);
+                spawn(en2, locate);
+                spawn(en3, locate);
+                spawn(en4, locate);
+                spawn(en5, locate);
+                spawn(en6, locate);
+            }
+            dif++;
+            currentWave++;
         }
     }
 
     void spawn(GameObject myPrefab, gen a)
     {
         var randomPosition = new Vector3(Random.Range((a.xsize/2) - 20, (a.xsize/2)+20), Random.Range(10, 10), Random.Range((a.zsize / 2) - 20, (a.zsize / 2) + 20));
-        Instantiate(myPrefab, randomPosition, Quaternion.identity);
+        var enemy = Instantiate(myPrefab, randomPosition, Quaternion.identity);
+        enemy.transform.parent = gameObject.transform;
     }
 }

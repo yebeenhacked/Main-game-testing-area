@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2728407816235610153}
   - component: {fileID: 2728407816235610159}
   - component: {fileID: 2728407816235610158}
-  - component: {fileID: 570565589069467333}
   - component: {fileID: 5636917097609453804}
+  - component: {fileID: 4072295490212104310}
   m_Layer: 0
   m_Name: sythe
   m_TagString: Untagged
@@ -100,19 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 25
   mouse: {fileID: 0}
---- !u!65 &570565589069467333
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2728407816235610152}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 52.221684, y: 2.8277771, z: 45.45812}
-  m_Center: {x: 11.917822, y: -0.0000014901162, z: 7.8779407}
 --- !u!54 &5636917097609453804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +116,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4072295490212104310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2728407816235610152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbeb76601740ff4aa6b856bdc1f79fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  mouse: {fileID: 0}
 --- !u!1 &2728407816298603674
 GameObject:
   m_ObjectHideFlags: 0
