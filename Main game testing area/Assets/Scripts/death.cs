@@ -43,7 +43,7 @@ public class death : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
     
