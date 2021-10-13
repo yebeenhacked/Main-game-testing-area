@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4654529262603468833}
   - component: {fileID: 4654529262603468832}
   - component: {fileID: 8287433537434399685}
-  - component: {fileID: 2173105886910932121}
   m_Layer: 0
   m_Name: swrd
   m_TagString: Untagged
@@ -118,20 +117,6 @@ BoxCollider:
   m_Size: {x: 5.89685, y: 18.06084, z: 19.24373}
   m_Center: {x: -0.0000019868214, y: -4.631676, z: 2.6685686}
 --- !u!114 &8287433537434399685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4654529262603468861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbeb76601740ff4aa6b856bdc1f79fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
-  mouse: {fileID: 0}
---- !u!114 &2173105886910932121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
