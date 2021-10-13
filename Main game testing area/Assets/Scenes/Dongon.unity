@@ -210,7 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomRooms:
-  - {fileID: 3339875958680312489, guid: e9877e5c616fce04db86445ae25e5c3e, type: 3}
   - {fileID: 8179100548113699372, guid: 15c73d17f59bf3048a1ba5ee40ee4567, type: 3}
   - {fileID: 8179100548113699372, guid: 15c73d17f59bf3048a1ba5ee40ee4567, type: 3}
   - {fileID: 814270245339998544, guid: ee355f3094f48dd4f95407c545a023c0, type: 3}
@@ -224,9 +223,7 @@ MonoBehaviour:
   - {fileID: 5372606829572216587, guid: 90c370c2b9f3f2644baf9abfbd9b5ad3, type: 3}
   - {fileID: 5440919041287015315, guid: ef575c95904506643955503009630731, type: 3}
   - {fileID: 5440919041287015315, guid: ef575c95904506643955503009630731, type: 3}
-  - {fileID: 3284602712526997676, guid: 2bbf6d2c8c4535943bf793b5fa696aa9, type: 3}
   leftRooms:
-  - {fileID: 2048844386612006634, guid: e5197acb4391a5e4fa8eae36659cd535, type: 3}
   - {fileID: 6666967009614686500, guid: 0b67d8cbae71bbe419d57c45fc03daef, type: 3}
   - {fileID: 6666967009614686500, guid: 0b67d8cbae71bbe419d57c45fc03daef, type: 3}
   - {fileID: 4627275518284847957, guid: 9c724db95e9d50846a91ad22e712409b, type: 3}
@@ -234,13 +231,20 @@ MonoBehaviour:
   - {fileID: 8179100548113699372, guid: 15c73d17f59bf3048a1ba5ee40ee4567, type: 3}
   - {fileID: 8179100548113699372, guid: 15c73d17f59bf3048a1ba5ee40ee4567, type: 3}
   rightRooms:
+  - {fileID: 5372606829572216587, guid: 90c370c2b9f3f2644baf9abfbd9b5ad3, type: 3}
+  - {fileID: 5372606829572216587, guid: 90c370c2b9f3f2644baf9abfbd9b5ad3, type: 3}
+  - {fileID: 4627275518284847957, guid: 9c724db95e9d50846a91ad22e712409b, type: 3}
+  - {fileID: 4627275518284847957, guid: 9c724db95e9d50846a91ad22e712409b, type: 3}
+  - {fileID: 814270245339998544, guid: ee355f3094f48dd4f95407c545a023c0, type: 3}
+  - {fileID: 814270245339998544, guid: ee355f3094f48dd4f95407c545a023c0, type: 3}
+  bottomRoomsend:
+  - {fileID: 3339875958680312489, guid: e9877e5c616fce04db86445ae25e5c3e, type: 3}
+  topRoomsend:
+  - {fileID: 3284602712526997676, guid: 2bbf6d2c8c4535943bf793b5fa696aa9, type: 3}
+  leftRoomsend:
+  - {fileID: 2048844386612006634, guid: e5197acb4391a5e4fa8eae36659cd535, type: 3}
+  rightRoomsend:
   - {fileID: 5083468007986171637, guid: 0343da45860306a4890905d7f687b254, type: 3}
-  - {fileID: 5372606829572216587, guid: 90c370c2b9f3f2644baf9abfbd9b5ad3, type: 3}
-  - {fileID: 5372606829572216587, guid: 90c370c2b9f3f2644baf9abfbd9b5ad3, type: 3}
-  - {fileID: 4627275518284847957, guid: 9c724db95e9d50846a91ad22e712409b, type: 3}
-  - {fileID: 4627275518284847957, guid: 9c724db95e9d50846a91ad22e712409b, type: 3}
-  - {fileID: 814270245339998544, guid: ee355f3094f48dd4f95407c545a023c0, type: 3}
-  - {fileID: 814270245339998544, guid: ee355f3094f48dd4f95407c545a023c0, type: 3}
   closedRoom: {fileID: 9103508635753135652, guid: ecb00fed68b1d7e4eb0664aafe3ff154, type: 3}
 --- !u!4 &1749667644
 Transform:

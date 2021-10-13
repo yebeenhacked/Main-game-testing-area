@@ -56,6 +56,36 @@ public class RoomSpawner : MonoBehaviour
                 a.transform.parent = parent.transform;
             }
             spawned = true;
+        }else if(spawned == false)
+        {
+            if (openingDirection == 1)
+            {
+                //bottm door
+                rand = Random.Range(0, templates.bottomRoomsend.Length);
+                var a = Instantiate(templates.bottomRoomsend[rand], transform.position, templates.bottomRoomsend[rand].transform.rotation);
+                a.transform.parent = parent.transform;
+            }
+            else if (openingDirection == 2)
+            {
+                //top
+                rand = Random.Range(0, templates.topRoomsend.Length);
+                var a = Instantiate(templates.topRoomsend[rand], transform.position, templates.topRoomsend[rand].transform.rotation);
+                a.transform.parent = parent.transform;
+            }
+            else if (openingDirection == 3)
+            {
+                //left
+                rand = Random.Range(0, templates.leftRoomsend.Length);
+                var a = Instantiate(templates.leftRoomsend[rand], transform.position, templates.leftRoomsend[rand].transform.rotation);
+                a.transform.parent = parent.transform;
+            }
+            else if (openingDirection == 4)
+            {
+                //right
+                rand = Random.Range(0, templates.rightRoomsend.Length);
+                var a = Instantiate(templates.rightRoomsend[rand], transform.position, templates.rightRoomsend[rand].transform.rotation);
+                a.transform.parent = parent.transform;
+            }
         }
 
     }
