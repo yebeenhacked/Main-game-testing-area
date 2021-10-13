@@ -7,6 +7,8 @@ TagManager:
   - point
   - plane
   - en
+  - Spawn
+  - Rooms
   layers:
   - Default
   - TransparentFX
